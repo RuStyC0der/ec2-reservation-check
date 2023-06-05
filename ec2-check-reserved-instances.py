@@ -130,18 +130,18 @@ if __name__ == '__main__':
     if reservations:
         unused_reservation_rows = []
         for reservation_id in reservations:
-            unused_reservation_rows.append(reservations[reservation_id]['InstanceType'],
+            unused_reservation_rows.append([reservations[reservation_id]['InstanceType'],
                                            reservations[reservation_id]['InstanceCount'],
                                            reservations[reservation_id]['OfferingType'],
                                            reservations[reservation_id]['End'],
-                                           )
+                                           ])
         unreserved_table = PrettyTable(['InstanceType', 'UnusedCount', 'OfferingType', 'ValidUntil'])
         unreserved_table.align = 'l'
-        for unreserved_instance_row in unreserved_instance_rows:
-            unreserved_table.add_row(unreserved_instance_row)
+        for unused_reservation_row in unused_reservation_rows:
+            unreserved_table.add_row(unused_reservation_row)
         
         print("")
-        print("Not reserved instances")
+        print("Unused reservations")
         print(unreserved_table)
 
     else:
