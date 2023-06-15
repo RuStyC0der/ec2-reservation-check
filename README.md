@@ -34,6 +34,7 @@ No unused reservations found
 
 Warning!!! This tool is pretty raw and have some issues:
  - it makes no diference for different reservation types, like dedicated and standart, regional and global.
- - any another issues that are not discovered yet)
+ - it does not make decisions about platform(windows or linux)
+ - any another issues that are not discovered yet
 
 PR are welcome
